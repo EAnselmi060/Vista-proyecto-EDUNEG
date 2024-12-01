@@ -51,7 +51,7 @@ export const Form = () => {
         <h2 className="ml-3 text-5xl   text-left font-semibold">Agregar Nuevo Profesor</h2>
 
         <div className="ml-3 place-content-center w-3/4">
-          <div className="mt-8 py-7 px-14 grid gap-5 md:grid-cols-1 border-solid	border-4">
+          <div className="mt-8 py-7 lg:px-14 grid gap-5 md:grid-cols-1 border-solid	border-4">
             <h4 className="text-3xl   text-left font-bold">Datos Personales</h4>
             <Input
               label="Nombres"
@@ -78,7 +78,7 @@ export const Form = () => {
               placeholder="..."
             />
           </div>
-          <div className="mt-8 py-7 px-14 grid gap-5 md:grid-cols-1 border-solid	border-4">
+          <div className="mt-8 py-7 lg:px-14 grid gap-5 md:grid-cols-1 border-solid	border-4">
           <h4 className="text-3xl   text-left font-bold">Datos Académicos</h4>
             <Select
               label="Departamento"  
