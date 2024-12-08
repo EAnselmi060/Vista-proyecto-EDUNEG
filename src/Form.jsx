@@ -24,7 +24,7 @@ export const Form = () => {
 
   const methods = useForm()
 
-  
+  const [loading, setLoading] = useState(false); // Estado de carga
 
   const onSubmit = methods.handleSubmit(async data => {
     console.log(data)
@@ -83,28 +83,28 @@ export const Form = () => {
         <h2 className="ml-3 text-5xl   text-left font-semibold">Agregar Nuevo Profesor</h2>
 
         <div className="ml-3 place-content-center w-3/4">
-          <div className="mt-8 py-7 lg:px-14 grid gap-5 md:grid-cols-1 border-solid	border-4">
+        <div className="mt-8 py-7 lg:px-14 grid gap-5 md:grid-cols-1 border-solid	border-4">
             <h4 className="text-3xl   text-left font-bold">Datos Personales</h4>
             <Input
-              label="Nombres"
+              label="nombres"
               type="text"
               id="nombres"
               placeholder="Escribe tus nombres..."
             />
             <Input
-              label="Apellidos"
+              label="apellidos"
               type="text"
               id="apellidos"
               placeholder="Escribe tus apellidos..."
             />
             <Input
-              label="Telefono"
+              label="telefono"
               type="text"
               id="telefono"
               placeholder="0000-00000000"
             />
             <Input
-              label="Dirección"
+              label="direccion"
               type="text"
               id="direccion"
               placeholder="..."
@@ -113,23 +113,23 @@ export const Form = () => {
           <div className="mt-8 py-7 lg:px-14 grid gap-5 md:grid-cols-1 border-solid	border-4">
           <h4 className="text-3xl   text-left font-bold">Datos Académicos</h4>
             <Select
-              label="Departamento"  
+              label="departamento"  
               id="departamento"
               items={departamentos}
             />
             <Select
-              label="Estatus"  
+              label="estatus"  
               id="estatus"
               items={estados}
             />
             <Input
-              label="Titulación"
+              label="titulacion"
               type="text"
               id="titulacion"
               placeholder="..."
             />
             <Input
-              label="Especialidad"
+              label="especialidad"
               type="text"
               id="especialidad"
               placeholder="..."
