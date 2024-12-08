@@ -33,7 +33,7 @@ export const Form = () => {
     try {
       setLoading(true); 
 
-      const response = await fetch('https://backend-node-git-main-eanselmi060s-projects.vercel.app/profesores', {
+      const response = await fetch('https://backprueba-git-main-eanselmi060s-projects.vercel.app/profesores', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
