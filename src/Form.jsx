@@ -33,7 +33,7 @@ export const Form = () => {
     try {
       setLoading(true); 
 
-      const response = await fetch('https://backend-node-git-main-eanselmi060s-projects.vercel.app/profesores', {
+      const response = await fetch('https://backend-node-git-master-alexgf2703gmailcoms-projects.vercel.app/profesores', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,8 +49,6 @@ export const Form = () => {
       console.log('Datos enviados exitosamente:', result);
 
       alert('¡Registro exitoso! Los datos se han enviado correctamente.');
-
-      window.location.href = 'https://backend-node-git-main-eanselmi060s-projects.vercel.app/profesores';
 
     } catch (error) {
       console.error('Error:', error);
@@ -83,7 +81,7 @@ export const Form = () => {
         <h2 className="ml-3 text-5xl   text-left font-semibold">Agregar Nuevo Profesor</h2>
 
         <div className="ml-3 place-content-center w-3/4">
-        <div className="mt-8 py-7 lg:px-14 grid gap-5 md:grid-cols-1 border-solid	border-4">
+          <div className="mt-8 py-7 lg:px-14 grid gap-5 md:grid-cols-1 border-solid	border-4">
             <h4 className="text-3xl   text-left font-bold">Datos Personales</h4>
             <Input
               label="nombres"
