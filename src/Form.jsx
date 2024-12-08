@@ -26,8 +26,40 @@ export const Form = () => {
 
   
 
-  const onSubmit = methods.handleSubmit(data => {
+  const onSubmit = methods.handleSubmit(async data => {
     console.log(data)
+    
+
+    try {
+      setLoading(true); 
+
+      const response = await fetch('https://backend-node-git-main-eanselmi060s-projects.vercel.app/profesores', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Error al enviar los datos');
+      }
+  
+      const result = await response.json();
+      console.log('Datos enviados exitosamente:', result);
+
+      alert('¡Registro exitoso! Los datos se han enviado correctamente.');
+
+      window.location.href = 'https://backend-node-git-main-eanselmi060s-projects.vercel.app/profesores';
+
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Ocurrió un error al enviar los datos. Por favor, inténtalo de nuevo.');
+      // Muestra un mensaje de error al usuario
+    }
+    finally {
+      setLoading(false); // Finaliza el estado de carga
+    }
   })
 
   const departamentos = [
@@ -105,8 +137,8 @@ export const Form = () => {
             
           </div>
           <div className="text-center mt-5">
-            <button onClick={onSubmit} className="inline-flex w-50  gap-x-1.5  rounded-md bg-blue-950 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 hover:text-blue-950">
-              Agregar Profesor
+            <button onClick={onSubmit} disabled={loading} className="inline-flex w-50  gap-x-1.5  rounded-md bg-blue-950 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 hover:text-blue-950">
+              {loading ? 'Registrando...' : 'Agregar Profesor'}
             </button>
           </div>
         </div>
